@@ -1,0 +1,285 @@
+
+// Code syntax so line numbers are not selectable
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// @mixin unselectable() {
+//     -webkit-touch-callout: none;
+//     -webkit-user-select: none;
+//     -khtml-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+// }
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+/* Solarized Dark 
+
+For use with Jekyll and Pygments
+
+http://ethanschoonover.com/solarized
+
+SOLARIZED HEX      ROLE
+--------- -------- ------------------------------------------
+base03    #002b36  background
+base01    #65737e  comments / secondary content
+base1     #c0c5ce  body text / default code / primary content
+orange    #cb4b16  constants
+red       #dc322f  regex, special keywords
+class      #d08770  reserved keywords
+cyan      #2aa198  strings, numbers
+include     #b48ead  operators, other keywords
+*/
+
+
+// Color scheme for code blocks
+// BASE16 THEMES: https://chriskempson.github.io/base16/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$base00: #2b303b; // black
+$base01: #343d46; // darkest gray
+$base02: #4f5b66; // darker gray
+$base03: #65737e; // dark gray
+$base04: #a7adba; // medium gray
+$base05: #c0c5ce; // light gray
+$base06: #dfe1e8; // lighter gray
+$base07: #eff1f5; // white
+$base08: #bf616a; // red
+$base09: #d08770; // orange
+$base0A: #ebcb8b; // yellow
+$base0B: #a3be8c; // green
+$base0C: #96b5b4; // blue
+$base0D: #8fa1b3; // indigo
+$base0E: #b48ead; // violet
+$base0F: #ab7967; // brown
+
+// Padding for code blocks
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$column_margin: 20px; // gutter between columns calculated in grid
+$code_block_title: $column_margin * 2.4;
+$code_block_padding: $column_margin * 1.2;
+
+$codeBlockPadding: 20px;
+$codeHeaderHeight: 50px;
+
+
+
+[class*="lang-"] {
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+
+    pre:before {
+        display: block;
+        content: 'example';
+        text-transform: uppercase;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 $codeBlockPadding;
+        line-height: $codeHeaderHeight;
+        background: $base02;
+        color: #fff;
+    }
+}
+
+[class*="-ruby"] pre:before {
+    content: 'ruby';
+}
+
+[class*="-js"] pre:before {
+    background: darken($base0A, 15%);
+    content: 'js';
+}
+
+[class*="-css"] pre:before {
+    background: darken($base0B, 10%);
+    content: 'css';
+}
+
+[class*="-scss"] pre:before {
+    background: darken($base0C, 10%);
+    content: 'scss';
+}
+
+[class*="-html"] pre:before {
+    background: darken($base0D, 10%);
+    content: 'html';
+}
+
+[class*="-php"] pre:before {
+    background: darken($base0E, 10%);
+    content: 'php';
+}
+
+[class*="-jquery"] pre:before {
+    background: darken($base0F, 5%);
+    content: 'jquery';
+}
+
+
+
+
+
+.highlight  { 
+    border: none;
+    // border-width: 0;
+    // border-style: solid;
+    padding: 0;
+    // margin: 0 0 2.5rem;
+    margin: 00;
+    overflow-x: auto;
+
+    background: #2b303b; 
+    border-color: #1c1f26;
+
+    // background-color: #002b36; 
+    color: #c0c5ce;
+
+
+
+    code {
+        position: relative;
+        background: none;
+        padding: ($codeHeaderHeight + $codeBlockPadding) $codeBlockPadding $codeBlockPadding;
+        white-space: pre;
+        -webkit-overflow-scrolling: touch;
+        display: block;
+        overflow: auto;
+        color: $base06;
+
+        &::-webkit-scrollbar {
+            width: .5em;
+            height: .5em;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $base04;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+    }
+
+    table {
+        margin: 0;
+    }
+
+    td,
+    th {
+        border: none;
+    }
+
+    pre.lineno {
+        @include opacity(0.6);  
+        border: none;
+    }
+
+    .lineno {
+        // @include unselectable();
+        user-select: none;
+        color: #757a84;
+    }
+
+    .gutter {
+        border-right: 1px dotted #414651;
+        padding: 12px 15px;
+    }
+
+    .code {
+        padding: 12px 15px;
+    }
+
+    pre {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+
+        pre {
+            border: none;
+            margin-bottom: 0px;
+        }
+    }
+
+    // Colors
+    .c   { color: #65737e } // Comment 
+    .err { color: #c0c5ce } // Error 
+    .g   { color: #c0c5ce } // Generic 
+    .k   { color: #b48ead } // Keyword 
+    .l   { color: #c0c5ce } // Literal 
+    .n   { color: #c0c5ce } // Name 
+    .o   { color: #b48ead } // Operator 
+    .x   { color: #cb4b16 } // Other 
+    .p   { color: #c0c5ce } // Punctuation 
+    .cm  { color: #65737e } // Comment.Multiline 
+    .cp  { color: #b48ead } // Comment.Preproc 
+    .c1  { color: #65737e } // Comment.Single 
+    .cs  { color: #b48ead } // Comment.Special 
+    .gd  { color: #2aa198 } // Generic.Deleted 
+    .ge  { color: #c0c5ce; font-style: italic } // Generic.Emph 
+    .gr  { color: #dc322f } // Generic.Error 
+    .gh  { color: #cb4b16 } // Generic.Heading 
+    .gi  { color: #b48ead } // Generic.Inserted 
+    .go  { color: #c0c5ce } // Generic.Output 
+    .gp  { color: #c0c5ce } // Generic.Prompt 
+    .gs  { color: #c0c5ce; font-weight: bold } // Generic.Strong 
+    .gu  { color: #cb4b16 } // Generic.Subheading 
+    .gt  { color: #c0c5ce } // Generic.Traceback 
+    .kc  { color: #d08770 } // Keyword.Constant 
+    .kd  { color: #b48ead } // Keyword.Declaration 
+    .kn  { color: #b48ead } // Keyword.Namespace 
+    .kp  { color: #b48ead } // Keyword.Pseudo 
+    .kr  { color: #d08770 } // Keyword.Reserved 
+    .kt  { color: #dc322f } // Keyword.Type 
+    .ld  { color: #c0c5ce } // Literal.Date 
+    .m   { color: #d08770 } // Literal.Number 
+    .s   { color: #a3be8c } // Literal.String 
+    .na  { color: #d08770 } // Name.Attribute 
+    .nb  { color: #c0c5ce } // Name.Builtin 
+    .nc  { color: #d08770 } // Name.Class 
+    .no  { color: #cb4b16 } // Name.Constant 
+    .nd  { color: #96b5b4 } // Name.Decorator 
+    .ni  { color: #cb4b16 } // Name.Entity 
+    .ne  { color: #cb4b16 } // Name.Exception 
+    .nf  { color: #d08770 } // Name.Function 
+    .nl  { color: #c0c5ce } // Name.Label 
+    .nn  { color: #c0c5ce } // Name.Namespace 
+    .nx  { color: #bf616a } // Name.Other 
+    .py  { color: #c0c5ce } // Name.Property 
+    .nt  { color: #bf616a } // Name.Tag 
+    .nv  { color: #bf616a } // Name.Variable 
+    .ow  { color: #b48ead } // Operator.Word 
+    .w   { color: #c0c5ce } // Text.Whitespace 
+    .mf  { color: #2aa198 } // Literal.Number.Float 
+    .mh  { color: #96b5b4 } // Literal.Number.Hex 
+    .mi  { color: #d08770 } // Literal.Number.Integer 
+    .mo  { color: #2aa198 } // Literal.Number.Oct 
+    .sb  { color: #65737e } // Literal.String.Backtick 
+    .sc  { color: #2aa198 } // Literal.String.Char 
+    .sd  { color: #c0c5ce } // Literal.String.Doc 
+    .s2  { color: #a3be8c } // Literal.String.Double 
+    .se  { color: #cb4b16 } // Literal.String.Escape 
+    .sh  { color: #c0c5ce } // Literal.String.Heredoc 
+    .si  { color: #2aa198 } // Literal.String.Interpol 
+    .sx  { color: #2aa198 } // Literal.String.Other 
+    .sr  { color: #dc322f } // Literal.String.Regex 
+    .s1  { color: #a3be8c } // Literal.String.Single 
+    .ss  { color: #2aa198 } // Literal.String.Symbol 
+    .bp  { color: #d08770 } // Name.Builtin.Pseudo 
+    .vc  { color: #d08770 } // Name.Variable.Class 
+    .vg  { color: #d08770 } // Name.Variable.Global 
+    .vi  { color: #d08770 } // Name.Variable.Instance 
+    .il  { color: #2aa198 } // Literal.Number.Integer.Long 
+}
+
+
