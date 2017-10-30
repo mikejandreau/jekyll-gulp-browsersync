@@ -212,9 +212,28 @@ Jekyll also offers powerful support for code snippets:
 
   .gallery {
     margin-bottom: 2.5rem;
+    margin-left: -10px;
+    margin-right: -10px;
   }
+
+  .gallery a {
+    display: block;
+    /*border: 1px solid red;*/
+    width: 160px;
+    float: left;
+    padding: 0 10px;
+  }
+
   .gallery img {
     width: 160px;
+    margin-bottom: 5px;
+  }
+
+  .gallery:after  {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
   }
 </style>
 
@@ -225,6 +244,7 @@ Jekyll also offers powerful support for code snippets:
 
   <a href="https://feimosi.github.io/baguetteBox.js/img/1-1.jpg" data-caption="Golden Gate derp">
       <img src="https://feimosi.github.io/baguetteBox.js/img/thumbs/1-1.jpg" alt="Golden Gate Bridge">
+      <span>caption</span>
   </a>
   <a href="https://feimosi.github.io/baguetteBox.js/img/1-2.jpg" title="Midnight City">
       <img src="https://feimosi.github.io/baguetteBox.js/img/thumbs/1-2.jpg" alt="Midnight City">
