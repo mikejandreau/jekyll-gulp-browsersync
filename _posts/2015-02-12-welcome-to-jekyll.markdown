@@ -11,7 +11,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 Jekyll also offers powerful support for code snippets:
 
 
-<div class="lang-ruby" data-lang="ruby">
+<div class="lang-ruby">
 {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"
@@ -29,7 +29,21 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 Jekyll also offers powerful support for code snippets:
 
 
-<div class="lang-js" data-lang="js">
+<div class="lang-js">
+{% highlight js %}
+// toggle the hamburger open and closed states
+var removeClass = true;
+
+$(".navbar-toggle").click(function () {
+  $(".navbar-toggle").toggleClass('is-active');
+  $(".navbar-menu").toggleClass('active-menu');
+  removeClass = false;
+});
+{% endhighlight %}
+</div>
+
+
+<div class="lang-jquery">
 {% highlight js %}
 // toggle the hamburger open and closed states
 var removeClass = true;
@@ -44,9 +58,29 @@ $(".navbar-toggle").click(function () {
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 
+<div class="lang-scss line-numbers">
+{% highlight scss linenos %}
+$base00: #2b303b; // black
+$base01: #343d46; // darkest gray
+$base02: #4f5b66; // darker gray
+$base03: #65737e; // dark gray
+$base04: #a7adba; // medium gray
+$base05: #c0c5ce; // light gray
+$base06: #dfe1e8; // lighter gray
+$base07: #eff1f5; // white
+$base08: #bf616a; // red
+$base09: #d08770; // orange
+$base0A: #ebcb8b; // yellow
+$base0B: #a3be8c; // green
+$base0C: #96b5b4; // blue
+$base0D: #8fa1b3; // indigo
+$base0E: #b48ead; // violet
+$base0F: #ab7967; // brown
 
+{% endhighlight %}
+</div>
 
-<div class="lang-scss" data-lang="scss">
+<div class="lang-scss">
 {% highlight scss %}
 // navbar
 .navbar,
@@ -71,7 +105,7 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 
 
-<div class="lang-css" data-lang="css">
+<div class="lang-css">
 {% highlight css %}
 .highlight  { 
   @extend %vertical-rhythm;
@@ -88,7 +122,7 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll]:    http://jekyllrb.com
 
 
-<div class="lang-html" data-lang="html">
+<div class="lang-html">
 {% highlight html %}
 <header class="site-header">
   <div class="wrapper">
@@ -98,9 +132,13 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 
 
-<div class="lang-php" data-lang="php">
-{% highlight php %}
-<?php elseif ( is_single() ) : ?>
+<div class="lang-php line-numbers">
+{% highlight php linenos %}
+<?php 
+  /* This is a
+   * multi-line comment
+   */
+   elseif ( is_single() ) : ?>
   <?php the_title( '<h1 class="entry-title"><span class="screen-reader-text">Article Title: </span>', '</h1>' ); ?>
   <div class="blog-author-date">
     <span class="blog-date">Posted on <?php echo get_the_date('M j, Y'); ?></span>
