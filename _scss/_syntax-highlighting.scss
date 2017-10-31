@@ -83,7 +83,7 @@ $codeHeaderHeight: $column_margin * 2;
 
 
 [class*="lang-"] {
-    font-family: monospace;
+    font-family: $mono-font-family;
     position: relative;
     border-radius: 4px;
     margin-bottom: 2.5rem;
