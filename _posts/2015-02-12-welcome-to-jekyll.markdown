@@ -85,6 +85,7 @@ $base0F: #ab7967; // brown
 // navbar
 .navbar,
 .navbar-spacer {  
+  @extend %vertical-rhythm;
   box-sizing: border-box;
   padding: 0;
   display: block;
@@ -108,7 +109,6 @@ $base0F: #ab7967; // brown
 <div class="lang-css">
 {% highlight css %}
 .highlight  { 
-  @extend %vertical-rhythm;
   border-width: 1px;
   border-style: solid;
   padding: 0;

@@ -54,10 +54,10 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
     return gulp.src([
             // '_scripts/vendor/jquery-2.2.4.js', // Include jQuery if you want
-            // '_scripts/vendor/class-helpers.js', // Pure JS class toggling
+            '_scripts/class-helpers.js', // Pure JS class toggling
             // '_scripts/vendor/autosize.js', // autosize text area in forms to fit content (optional)
-            // '_scripts/vendor/baguetteBox.js', // pure js image lightbox & slideshow (optional)
-            '_scripts/custom/main.js' // main JS file
+            '_scripts/vendor/baguetteBox.js', // pure js image lightbox & slideshow (optional)
+            '_scripts/main.js' // main JS file
         ])
         .pipe(concat('main.js'))
         .pipe(uglify())
