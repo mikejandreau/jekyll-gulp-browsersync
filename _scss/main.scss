@@ -3,9 +3,28 @@
 // ---
 @charset "utf-8";
 
+
+
+// Fonts
+// Currently the font files are located in assets/fonts, feel free to update as needed
+// Default is Montserrat Light, a nice sans-serif font family
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@import "fonts";
+// $font_main: 'roboto_monoregular', sans-serif;
+// $font_headings: 'montserratlight', sans-serif;
+// $font_main: 'robotoregular', sans-serif; // uncomment in base/fonts.scss
+// $font_headings: 'robotobold', sans-serif; // uncomment in base/fonts.scss
+// $font_main: 'roboto_slabregular', serif; // If you prefer serif typefaces,
+// $font_headings: 'roboto_slabbold', serif; // Roboto Slab is included for a quick A/B test
+// $font_code: 'inconsolataregular', Monaco, Consolas, monospace;
+// $font_pre: 'roboto_monoregular', Monaco, Consolas, monospace;
+
+
+
+
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$mono-font-family: Consolas, monaco, monospace;
+$mono-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: 'roboto_monoregular', Consolas, monaco, monospace;
 
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
