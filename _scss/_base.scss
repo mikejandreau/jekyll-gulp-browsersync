@@ -17,7 +17,7 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    font-weight: normal;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -80,7 +80,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: bold;
 }
 
 
@@ -128,15 +128,16 @@ blockquote {
 pre,
 code {
     font-family: $mono-font-family;
-    font-size: 15px;
+    font-size: $small-font-size;
     // border: 1px solid $grey-color-light;
     // border-radius: 3px;
     // background-color: #eef;
 }
 
-// code {
-//     padding: 1px 5px;
-// }
+code {
+    padding: 5px 5px 1px;
+    background: $grey-color-light;
+}
 
 // pre {
 //     padding: 8px 12px;

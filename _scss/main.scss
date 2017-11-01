@@ -9,7 +9,7 @@
 // Currently the font files are located in assets/fonts, feel free to update as needed
 // Default is Montserrat Light, a nice sans-serif font family
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-@import "fonts";
+// @import "fonts";
 // $font_main: 'roboto_monoregular', sans-serif;
 // $font_headings: 'montserratlight', sans-serif;
 // $font_main: 'robotoregular', sans-serif; // uncomment in base/fonts.scss
@@ -23,12 +23,16 @@
 
 
 // Our variables
-$mono-font-family: Helvetica, Arial, sans-serif;
-$base-font-family: 'roboto_monoregular', Consolas, monaco, monospace;
+// $base-font-family: 'robotolight', Helvetica, Arial, sans-serif;
+// $mono-font-family: 'roboto_monoregular', Consolas, monaco, monospace;
+$base-font-family: Helvetica, Arial, sans-serif;
+$mono-font-family: Consolas, monaco, monospace;
 
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
+
+$border_radius: 4px;
 
 $spacing-unit:     30px;
 
