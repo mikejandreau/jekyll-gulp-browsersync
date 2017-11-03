@@ -142,6 +142,11 @@ $codeHeaderHeight: $column_margin * 2;
         background: darken($base0B, 10%);
         content: 'CSS';
     }
+
+    &[class*="-python"]:before {
+        background: darken($base0C, 20%);
+        content: 'Python';
+    }
 }
 
 .highlight  { 
