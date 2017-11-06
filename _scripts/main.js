@@ -23,3 +23,9 @@ var baguetteBoxThree = document.getElementsByClassName('baguetteBox3');
 if (baguetteBoxThree.length > 0) {
     baguetteBox.run('.baguetteBox3');
 }
+
+// If contact form is present, add action attribute
+var contactform =  document.getElementById('contactform');
+if (contactform.length > 0) {
+    contactform.setAttribute('action', '//formspree.io/' + 'mikejandreau' + '@' + 'gmail' + '.' + 'com');
+}
