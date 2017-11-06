@@ -161,7 +161,7 @@
 /**
  * Page content
  */
-.page-content {
+.site-content {
     padding: $spacing-unit 0;
 }
 
@@ -232,5 +232,42 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// affix footer footer to bottom of page
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.site-header,
+.site-footer {
+    flex: none;
+}
+
+.site-content {
+    flex: 1 0 auto;
+    width: 100%;
+
+    &::after {
+        content: '\00a0'; /* &nbsp; */
+        display: block;
+        height: 0px;
+        visibility: hidden;
     }
 }
