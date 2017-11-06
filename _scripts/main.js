@@ -27,5 +27,5 @@ if (baguetteBoxThree.length > 0) {
 // If contact form is present, add action attribute
 var contactform =  document.getElementById('contactform');
 if (contactform.length > 0) {
-    contactform.setAttribute('action', '//formspree.io/' + 'mikejandreau' + '@' + 'gmail' + '.' + 'com');
+    contactform.setAttribute('action', '//formspree.io/' + 'mike' + '@' + 'losaidos' + '.' + 'com');
 }
